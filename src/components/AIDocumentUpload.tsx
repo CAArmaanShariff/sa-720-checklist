@@ -2,9 +2,10 @@ import { useState, useCallback } from 'react';
 import { Upload, FileText, AlertCircle, Loader2 } from 'lucide-react';
 import * as pdfjsLib from 'pdfjs-dist';
 
-// Set worker path for PDF.js
+// Set worker path for PDF.js (use specific version for stability)
 if (typeof window !== 'undefined') {
-  pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+  // Use the legacy build for better compatibility
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
 }
 
 interface AIDocumentUploadProps {
@@ -22,21 +23,37 @@ export function AIDocumentUpload({ onAnalyze, isLoading }: AIDocumentUploadProps
 
   // Extract text from PDF using pdfjs-dist (client-side)
   const extractPDFText = async (file: File): Promise<string> => {
-    const arrayBuffer = await file.arrayBuffer();
-    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-    
-    let fullText = '';
-    
-    for (let i = 1; i <= pdf.numPages; i++) {
-      const page = await pdf.getPage(i);
-      const textContent = await page.getTextContent();
-      const pageText = textContent.items
-        .map((item: any) => item.str)
-        .join(' ');
-      fullText += `\n--- Page ${i} ---\n${pageText}\n`;
+    try {
+      const arrayBuffer = await file.arrayBuffer();
+      console.log('PDF file size:', arrayBuffer.byteLength, 'bytes');
+      
+      // Use getDocument with proper settings
+      const loadingTask = pdfjsLib.getDocument({
+        data: arrayBuffer,
+        useWorkerFetch: false,
+        useSystemFonts: true,
+      });
+      
+      const pdf = await loadingTask.promise;
+      console.log('PDF loaded, pages:', pdf.numPages);
+      
+      let fullText = '';
+      
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const textContent = await page.getTextContent();
+        const pageText = textContent.items
+          .map((item: any) => item.str)
+          .join(' ');
+        fullText += `\\n--- Page ${i} ---\\n${pageText}\\n`;
+      }
+      
+      console.log('Extracted text length:', fullText.length, 'chars');
+      return fullText;
+    } catch (error) {
+      console.error('PDF extraction error:', error);
+      throw error;
     }
-    
-    return fullText;
   };
 
   const handleFSDrop = useCallback(async (file: File) => {
