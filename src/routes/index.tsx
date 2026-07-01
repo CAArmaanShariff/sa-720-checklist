@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AIDocumentUpload } from "../components/AIDocumentUpload";
+import { AIDiscrepancyAlertLog } from "../components/AIDiscrepancyAlertLog";
 import { useEffect, useState, useMemo, Fragment } from "react";
 
 export const Route = createFileRoute("/")({
