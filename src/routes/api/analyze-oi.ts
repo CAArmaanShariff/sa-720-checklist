@@ -1,33 +1,36 @@
-import { defineEventHandler, readBody, setHeaders } from 'h3';
+import { createAPIFileRoute } from '@tanstack/start';
+import { setHeaders } from 'h3';
 
 interface AnalyzeRequest {
   fsText: string;
   oiText: string;
 }
 
-export default defineEventHandler(async (event) => {
-  // Set CORS headers for edge runtime
-  setHeaders(event, {
-    'Content-Type': 'application/json',
-  });
-  
-  const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
-  
-  if (!OPENROUTER_API_KEY) {
-    return {
-      error: 'OpenRouter API key not configured. Please add OPENROUTER_API_KEY to Vercel environment variables.'
-    };
-  }
-
-  try {
-    const body = await readBody<AnalyzeRequest>(event);
-    const { fsText, oiText } = body || {};
-
-    if (!fsText || !oiText) {
-      return { error: 'Both financial statements and annual report text are required' };
+export const APIRoute = createAPIFileRoute('/api/analyze-oi')({
+  POST: async ({ request }) => {
+    // Set CORS headers
+    const headers = new Headers();
+    headers.set('Content-Type', 'application/json');
+    
+    const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+    
+    if (!OPENROUTER_API_KEY) {
+      return new Response(JSON.stringify({
+        error: 'OpenRouter API key not configured. Please add OPENROUTER_API_KEY to Vercel environment variables.'
+      }), { status: 500, headers });
     }
 
-    const systemPrompt = `You are a strict Indian Statutory Auditor performing an SA 720 review. Your job is to read the 'Other Information' (Annual Report) and cross-check it against the 'Audited Financial Statements'. 
+    try {
+      const body = await request.json() as AnalyzeRequest;
+      const { fsText, oiText } = body || {};
+
+      if (!fsText || !oiText) {
+        return new Response(JSON.stringify({ 
+          error: 'Both financial statements and annual report text are required' 
+        }), { status: 400, headers });
+      }
+
+      const systemPrompt = `You are a strict Indian Statutory Auditor performing an SA 720 review. Your job is to read the 'Other Information' (Annual Report) and cross-check it against the 'Audited Financial Statements'. 
 
 You must identify material inconsistencies. Check for:
 
@@ -53,7 +56,7 @@ Return your response strictly as a JSON object matching this structure:
   ]
 }`;
 
-    const userPrompt = `AUDITED FINANCIAL STATEMENTS:
+      const userPrompt = `AUDITED FINANCIAL STATEMENTS:
 \`\`\`
 ${fsText.substring(0, 50000)}
 \`\`\`
@@ -65,54 +68,61 @@ ${oiText.substring(0, 50000)}
 
 Please analyze these documents and return the JSON response.`;
 
-    // Call OpenRouter API
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
-        'Content-Type': 'application/json',
-        'HTTP-Referer': 'https://github.com/CAArmaanShariff/sa-720-checklist',
-        'X-Title': 'SA 720 Checklist AI Analysis'
-      },
-      body: JSON.stringify({
-        model: 'anthropic/claude-3.5-sonnet',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userPrompt }
-        ],
-        temperature: 0.1,
-        max_tokens: 4000
-      })
-    });
+      // Call OpenRouter API
+      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+          'Content-Type': 'application/json',
+          'HTTP-Referer': 'https://github.com/CAArmaanShariff/sa-720-checklist',
+          'X-Title': 'SA 720 Checklist AI Analysis'
+        },
+        body: JSON.stringify({
+          model: 'anthropic/claude-3.5-sonnet',
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+          ],
+          temperature: 0.1,
+          max_tokens: 4000
+        })
+      });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('OpenRouter API error:', errorText);
-      return { error: `AI analysis failed: ${response.status}` };
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('OpenRouter API error:', errorText);
+        return new Response(JSON.stringify({ 
+          error: `AI analysis failed: ${response.status}` 
+        }), { status: 500, headers });
+      }
+
+      const data = await response.json() as any;
+      const content = data.choices?.[0]?.message?.content;
+
+      if (!content) {
+        return new Response(JSON.stringify({ 
+          error: 'No response from AI model' 
+        }), { status: 500, headers });
+      }
+
+      // Extract JSON from response
+      const jsonMatch = content.match(/\{[\s\S]*\}/);
+      if (!jsonMatch) {
+        console.error('Raw AI response:', content);
+        return new Response(JSON.stringify({ 
+          error: 'Could not parse AI response as JSON' 
+        }), { status: 500, headers });
+      }
+
+      const result = JSON.parse(jsonMatch[0]);
+
+      return new Response(JSON.stringify(result), { status: 200, headers });
+
+    } catch (error) {
+      console.error('Analysis error:', error);
+      return new Response(JSON.stringify({ 
+        error: error instanceof Error ? error.message : 'Analysis failed' 
+      }), { status: 500, headers });
     }
-
-    const data = await response.json() as any;
-    const content = data.choices?.[0]?.message?.content;
-
-    if (!content) {
-      return { error: 'No response from AI model' };
-    }
-
-    // Extract JSON from response
-    const jsonMatch = content.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) {
-      console.error('Raw AI response:', content);
-      return { error: 'Could not parse AI response as JSON' };
-    }
-
-    const result = JSON.parse(jsonMatch[0]);
-
-    return result;
-
-  } catch (error) {
-    console.error('Analysis error:', error);
-    return { 
-      error: error instanceof Error ? error.message : 'Analysis failed'
-    };
   }
 });
