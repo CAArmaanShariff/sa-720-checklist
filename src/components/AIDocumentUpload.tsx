@@ -2,10 +2,14 @@ import { useState, useCallback } from 'react';
 import { Upload, FileText, AlertCircle, Loader2 } from 'lucide-react';
 import * as pdfjsLib from 'pdfjs-dist';
 
-// Set worker path for PDF.js (use specific version for stability)
+// Set worker path for PDF.js - use exact version string (not pdfjsLib.version)
+// The installed version 4.4.168, but CDN uses legacy build
 if (typeof window !== 'undefined') {
-  // Use the legacy build for better compatibility
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (pdfjsLib as any).GlobalWorkerOptions.workerSrc = new URL(
+    'pdfjs-dist/build/pdf.worker.min.mjs',
+    import.meta.url
+  ).toString();
 }
 
 interface AIDocumentUploadProps {
