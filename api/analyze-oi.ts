@@ -1,23 +1,33 @@
-export default defineEventHandler(async (event) => {
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Set CORS headers
-  setResponseHeaders(event, {
-    'Content-Type': 'application/json',
-  });
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
 
   const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 
   if (!OPENROUTER_API_KEY) {
-    return {
+    return res.status(500).json({
       error: 'OpenRouter API key not configured. Please add OPENROUTER_API_KEY to Vercel environment variables.'
-    };
+    });
   }
 
   try {
-    const body = await readBody(event);
-    const { fsText, oiText } = body || {};
+    const { fsText, oiText } = req.body || {};
 
     if (!fsText || !oiText) {
-      return { error: 'Both financial statements and annual report text are required' };
+      return res.status(400).json({ error: 'Both financial statements and annual report text are required' });
     }
 
     const systemPrompt = `You are a strict Indian Statutory Auditor performing an SA 720 review. Your job is to read the 'Other Information' (Annual Report) and cross-check it against the 'Audited Financial Statements'. 
@@ -81,30 +91,30 @@ Please analyze these documents and return the JSON response.`;
     if (!response.ok) {
       const errorText = await response.text();
       console.error('OpenRouter API error:', errorText);
-      return { error: `AI analysis failed: ${response.status}` };
+      return res.status(500).json({ error: `AI analysis failed: ${response.status}` });
     }
 
     const data = await response.json();
     const content = data.choices?.[0]?.message?.content;
 
     if (!content) {
-      return { error: 'No response from AI model' };
+      return res.status(500).json({ error: 'No response from AI model' });
     }
 
     // Extract JSON from response
     const jsonMatch = content.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
       console.error('Raw AI response:', content);
-      return { error: 'Could not parse AI response as JSON' };
+      return res.status(500).json({ error: 'Could not parse AI response as JSON' });
     }
 
     const result = JSON.parse(jsonMatch[0]);
-    return result;
+    return res.status(200).json(result);
 
   } catch (error) {
     console.error('Analysis error:', error);
-    return { 
-      error: error instanceof Error ? error.message : 'Analysis failed' 
-    };
+    return res.status(500).json({
+      error: error instanceof Error ? error.message : 'Analysis failed'
+    });
   }
-});
+}
