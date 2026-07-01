@@ -306,6 +306,18 @@ function App() {
       <div className="mx-auto max-w-7xl px-6 py-6">
         <StatsBar stats={stats} />
 
+        {/* AI Upload Module */}
+        <div className="mt-6">
+          <AIDocumentUpload onAnalyze={handleAIAnalyze} isLoading={aiLoading} />
+        </div>
+
+        {/* AI Discrepancy Alert Log */}
+        {aiInconsistencies.length > 0 && (
+          <div className="mt-6">
+            <AIDiscrepancyAlertLog inconsistencies={aiInconsistencies} />
+          </div>
+        )}
+
         <div className="mt-6 border-b border-slate-200">
           <nav className="flex gap-1">
             <TabBtn active={tab === "tieout"} onClick={() => setTab("tieout")}>1. Financial Tie-Out Ledger</TabBtn>
