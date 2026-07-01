@@ -1,55 +1,30 @@
-export const runtime = 'edge';
+import { defineEventHandler, readBody, setHeaders } from 'h3';
 
 interface AnalyzeRequest {
   fsText: string;
   oiText: string;
 }
 
-interface TieOutItem {
-  metric: string;
-  financialValue: string;
-  oiValue: string;
-  variance: string;
-  status: 'Matched' | 'Inconsistent';
-  sourcePage: string;
-}
-
-interface ChecklistResult {
-  hasMDA: boolean;
-  hasBRSR: boolean;
-  hasDirectorsResponsibility: boolean;
-  unexplainedRatioVariances: string[];
-}
-
-interface MaterialInconsistency {
-  description: string;
-  source: string;
-}
-
-interface AnalyzeResponse {
-  tieOutLedger: TieOutItem[];
-  checklist: ChecklistResult;
-  materialInconsistencies: MaterialInconsistency[];
-}
-
-export async function POST({ request }: { request: Request }): Promise<Response> {
+export default defineEventHandler(async (event) => {
+  // Set CORS headers for edge runtime
+  setHeaders(event, {
+    'Content-Type': 'application/json',
+  });
+  
   const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
   
   if (!OPENROUTER_API_KEY) {
-    return new Response(
-      JSON.stringify({ error: 'OpenRouter API key not configured' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
-    );
+    return {
+      error: 'OpenRouter API key not configured. Please add OPENROUTER_API_KEY to Vercel environment variables.'
+    };
   }
 
   try {
-    const { fsText, oiText } = await request.json() as AnalyzeRequest;
+    const body = await readBody<AnalyzeRequest>(event);
+    const { fsText, oiText } = body || {};
 
     if (!fsText || !oiText) {
-      return new Response(
-        JSON.stringify({ error: 'Both financial statements and annual report text are required' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
-      );
+      return { error: 'Both financial statements and annual report text are required' };
     }
 
     const systemPrompt = `You are a strict Indian Statutory Auditor performing an SA 720 review. Your job is to read the 'Other Information' (Annual Report) and cross-check it against the 'Audited Financial Statements'. 
@@ -113,44 +88,31 @@ Please analyze these documents and return the JSON response.`;
     if (!response.ok) {
       const errorText = await response.text();
       console.error('OpenRouter API error:', errorText);
-      return new Response(
-        JSON.stringify({ error: `AI analysis failed: ${response.status}` }),
-        { status: response.status, headers: { 'Content-Type': 'application/json' } }
-      );
+      return { error: `AI analysis failed: ${response.status}` };
     }
 
-    const data = await response.json();
+    const data = await response.json() as any;
     const content = data.choices?.[0]?.message?.content;
 
     if (!content) {
-      return new Response(
-        JSON.stringify({ error: 'No response from AI model' }),
-        { status: 500, headers: { 'Content-Type': 'application/json' } }
-      );
+      return { error: 'No response from AI model' };
     }
 
     // Extract JSON from response
-    let jsonMatch = content.match(/\{[\s\S]*\}/);
+    const jsonMatch = content.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
       console.error('Raw AI response:', content);
-      return new Response(
-        JSON.stringify({ error: 'Could not parse AI response as JSON' }),
-        { status: 500, headers: { 'Content-Type': 'application/json' } }
-      );
+      return { error: 'Could not parse AI response as JSON' };
     }
 
-    const result = JSON.parse(jsonMatch[0]) as AnalyzeResponse;
+    const result = JSON.parse(jsonMatch[0]);
 
-    return new Response(
-      JSON.stringify(result),
-      { status: 200, headers: { 'Content-Type': 'application/json' } }
-    );
+    return result;
 
   } catch (error) {
     console.error('Analysis error:', error);
-    return new Response(
-      JSON.stringify({ error: error instanceof Error ? error.message : 'Analysis failed' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
-    );
+    return { 
+      error: error instanceof Error ? error.message : 'Analysis failed'
+    };
   }
-}
+});
