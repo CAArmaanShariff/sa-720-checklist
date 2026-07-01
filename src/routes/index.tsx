@@ -52,6 +52,11 @@ interface ChecklistItem {
 }
 
 
+interface MaterialInconsistency {
+  description: string;
+  source: string;
+}
+
 interface RatioRow {
   id: string;
   ratio: string;
@@ -205,6 +210,65 @@ function App() {
     if (!hydrated) return;
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   }, [state, hydrated]);
+
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiInconsistencies, setAiInconsistencies] = useState<MaterialInconsistency[]>([]);
+
+  // AI Analysis Handler
+  const handleAIAnalyze = async (fsText: string, oiText: string) => {
+    setAiLoading(true);
+    try {
+      const response = await fetch('/api/analyze-oi', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fsText, oiText })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Analysis failed');
+      }
+
+      const data = await response.json();
+
+      if (data.tieOutLedger && Array.isArray(data.tieOutLedger)) {
+        setState(prev => ({
+          ...prev,
+          tieOut: prev.tieOut.map((row, idx) => {
+            const aiRow = data.tieOutLedger.find((r: any) => 
+              r.metric?.toLowerCase().includes(row.particular.toLowerCase()) ||
+              row.particular.toLowerCase().includes(r.metric?.toLowerCase())
+            );
+            if (aiRow) {
+              return { ...row, fsAmount: aiRow.financialValue || row.fsAmount, otherInfoAmount: aiRow.oiValue || row.otherInfoAmount, source: aiRow.sourcePage || row.source, status: aiRow.status || row.status };
+            }
+            return row;
+          })
+        }));
+      }
+
+      if (data.checklist) {
+        setState(prev => ({
+          ...prev,
+          checklist: prev.checklist.map(item => {
+            if (item.requirement.includes('MD&A') || item.requirement.includes('Management Discussion')) return { ...item, status: data.checklist.hasMDA ? 'Complied' : 'Inconsistent' };
+            if (item.requirement.includes('BRSR') || item.requirement.includes('Business Responsibility')) return { ...item, status: data.checklist.hasBRSR ? 'Complied' : 'Inconsistent' };
+            if (item.requirement.includes('Directors\' Responsibility')) return { ...item, status: data.checklist.hasDirectorsResponsibility ? 'Complied' : 'Inconsistent' };
+            return item;
+          })
+        }));
+      }
+
+      if (data.materialInconsistencies && Array.isArray(data.materialInconsistencies)) {
+        setAiInconsistencies(data.materialInconsistencies);
+      }
+    } catch (error) {
+      console.error('AI Analysis error:', error);
+      alert(error instanceof Error ? error.message : 'AI analysis failed');
+    } finally {
+      setAiLoading(false);
+    }
+  };
 
   const stats = useMemo(() => {
     const total = state.checklist.length;
