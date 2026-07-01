@@ -1,0 +1,22 @@
+{
+  "compatibility_date": "2026-07-01",
+  "main": "index.mjs",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "../public"
+  },
+  "name": "tanstack-start-ts--hermes-profiles-armaan-home--hermes-profiles-armaan-workspace-sa-720-code",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "no_bundle": true,
+  "rules": [
+    {
+      "type": "ESModule",
+      "globs": [
+        "**/*.mjs",
+        "**/*.js"
+      ]
+    }
+  ]
+}

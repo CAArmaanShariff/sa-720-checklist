@@ -1,0 +1,2091 @@
+import { n as __toESM } from "../_runtime.mjs";
+import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-C92Jq9xA.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
+var STORAGE_KEY = "sa720-audit-tool-v1";
+var defaultChecklist = [
+	{
+		id: "ca-a",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(a)",
+		requirement: "Web address where annual return referred to in section 92(3) has been placed",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-b",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(b)",
+		requirement: "Number of meetings of the Board",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-c",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(c)",
+		requirement: "Directors' Responsibility Statement [Sec 134(5)]",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-ca",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(ca)",
+		requirement: "Details of frauds reported by auditors under section 143(12) other than those reportable to Central Government",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-d",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(d)",
+		requirement: "Statement on declaration given by independent directors under section 149(6)",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-e",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(e)",
+		requirement: "Company's policy on directors' appointment and remuneration including criteria for determining qualifications, positive attributes and independence [Sec 178(3)]",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-f",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(f)",
+		requirement: "Explanations or comments by the Board on every qualification, reservation, adverse remark or disclaimer made by auditor / by company secretary in practice in secretarial audit report",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-g",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(g)",
+		requirement: "Particulars of loans, guarantees or investments under section 186",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-h",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(h)",
+		requirement: "Particulars of contracts or arrangements with related parties under section 188(1) — Form AOC-2",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-i",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(i)",
+		requirement: "State of the Company's affairs",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-j",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(j)",
+		requirement: "Amounts, if any, which it proposes to carry to any reserves",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-k",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(k)",
+		requirement: "Amount, if any, which it recommends should be paid by way of dividend",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-l",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(l)",
+		requirement: "Material changes and commitments affecting financial position occurring between end of FY and date of report",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-m",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(m)",
+		requirement: "Conservation of energy, technology absorption, foreign exchange earnings and outgo (manner prescribed in Rule 8(3))",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-n",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(n)",
+		requirement: "Statement indicating development and implementation of risk management policy, including identification of risks threatening company's existence",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-o",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(o)",
+		requirement: "Details about the policy developed and implemented on Corporate Social Responsibility initiatives [Sec 135]",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-p",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(p)",
+		requirement: "Statement indicating manner of formal annual evaluation of performance of the Board, its Committees and individual directors (listed cos. & prescribed classes)",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-q",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3)(q)",
+		requirement: "Such other matters as may be prescribed (i.e. Rule 8 of Companies (Accounts) Rules, 2014)",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "ca-3a",
+		module: "Companies Act Sec 134(3)",
+		reference: "Sec 134(3A)",
+		requirement: "Abridged Board's Report for One Person Company / Small Company / Startup (Rule 8A)",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "r8-1",
+		module: "Rule 8 — Companies (Accounts) Rules, 2014",
+		reference: "Rule 8(1)",
+		requirement: "Financial summary or highlights",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "r8-2",
+		module: "Rule 8 — Companies (Accounts) Rules, 2014",
+		reference: "Rule 8(2)",
+		requirement: "Change in nature of business, if any",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "r8-3",
+		module: "Rule 8 — Companies (Accounts) Rules, 2014",
+		reference: "Rule 8(3)",
+		requirement: "Directors and KMP appointed/resigned during the year",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "r8-4",
+		module: "Rule 8 — Companies (Accounts) Rules, 2014",
+		reference: "Rule 8(4)",
+		requirement: "Names of companies which have become or ceased to be subsidiaries, JVs or associates",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "r8-5",
+		module: "Rule 8 — Companies (Accounts) Rules, 2014",
+		reference: "Rule 8(5)(i)-(vi)",
+		requirement: "Details relating to deposits — accepted, unpaid/unclaimed, default in repayment, non-compliance with Chapter V",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "r8-5vii",
+		module: "Rule 8 — Companies (Accounts) Rules, 2014",
+		reference: "Rule 8(5)(vii)",
+		requirement: "Significant and material orders passed by regulators / courts / tribunals impacting going concern and future operations",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "r8-5viii",
+		module: "Rule 8 — Companies (Accounts) Rules, 2014",
+		reference: "Rule 8(5)(viii)",
+		requirement: "Adequacy of Internal Financial Controls with reference to the Financial Statements",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "r8-5ix",
+		module: "Rule 8 — Companies (Accounts) Rules, 2014",
+		reference: "Rule 8(5)(ix)",
+		requirement: "Maintenance of cost records under section 148(1), where applicable",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "r8-5x",
+		module: "Rule 8 — Companies (Accounts) Rules, 2014",
+		reference: "Rule 8(5)(x)",
+		requirement: "Statement on compliance with provisions relating to constitution of Internal Complaints Committee under POSH Act, 2013",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "r8-5xi",
+		module: "Rule 8 — Companies (Accounts) Rules, 2014",
+		reference: "Rule 8(5)(xi)",
+		requirement: "Details of application or proceedings pending under Insolvency & Bankruptcy Code, 2016 (status at year-end)",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "r8-5xii",
+		module: "Rule 8 — Companies (Accounts) Rules, 2014",
+		reference: "Rule 8(5)(xii)",
+		requirement: "Details of difference between valuation amount at one-time settlement and valuation at the time of taking loan from Banks/FIs, with reasons",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "sl-1",
+		module: "SEBI LODR Reg 34",
+		reference: "Reg 34(2)(e)",
+		requirement: "Management Discussion & Analysis (MD&A)",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "sl-2",
+		module: "SEBI LODR Reg 34",
+		reference: "Reg 34(2)(f)",
+		requirement: "Business Responsibility & Sustainability Report (BRSR)",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	},
+	{
+		id: "sl-3",
+		module: "SEBI LODR Reg 34",
+		reference: "Reg 34(3) r/w Sch V",
+		requirement: "Corporate Governance Report",
+		status: "Pending",
+		workpaperRef: "",
+		remarks: ""
+	}
+];
+var defaultRatios = [
+	{
+		id: "r1",
+		ratio: "Current Ratio",
+		current: "",
+		previous: "",
+		explanation: "",
+		auditorEvaluation: ""
+	},
+	{
+		id: "r2",
+		ratio: "Debt-Equity Ratio",
+		current: "",
+		previous: "",
+		explanation: "",
+		auditorEvaluation: ""
+	},
+	{
+		id: "r3",
+		ratio: "Debt Service Coverage Ratio",
+		current: "",
+		previous: "",
+		explanation: "",
+		auditorEvaluation: ""
+	},
+	{
+		id: "r4",
+		ratio: "Return on Equity (%)",
+		current: "",
+		previous: "",
+		explanation: "",
+		auditorEvaluation: ""
+	},
+	{
+		id: "r5",
+		ratio: "Inventory Turnover Ratio",
+		current: "",
+		previous: "",
+		explanation: "",
+		auditorEvaluation: ""
+	},
+	{
+		id: "r6",
+		ratio: "Trade Receivables Turnover",
+		current: "",
+		previous: "",
+		explanation: "",
+		auditorEvaluation: ""
+	},
+	{
+		id: "r7",
+		ratio: "Trade Payables Turnover",
+		current: "",
+		previous: "",
+		explanation: "",
+		auditorEvaluation: ""
+	},
+	{
+		id: "r8",
+		ratio: "Net Capital Turnover",
+		current: "",
+		previous: "",
+		explanation: "",
+		auditorEvaluation: ""
+	},
+	{
+		id: "r9",
+		ratio: "Net Profit Ratio (%)",
+		current: "",
+		previous: "",
+		explanation: "",
+		auditorEvaluation: ""
+	},
+	{
+		id: "r10",
+		ratio: "Return on Capital Employed (%)",
+		current: "",
+		previous: "",
+		explanation: "",
+		auditorEvaluation: ""
+	}
+];
+var emptyEscalation = {
+	managementResponse: "",
+	tcwgRequired: false,
+	tcwgDate: "",
+	tcwgRemarks: "",
+	resolution: ""
+};
+var defaultTieOut = [
+	{
+		id: "t1",
+		particular: "Revenue from Operations",
+		fsAmount: "",
+		otherInfoAmount: "",
+		source: "Director's Report - State of Affairs",
+		remarks: "",
+		status: "Unreviewed",
+		escalation: { ...emptyEscalation }
+	},
+	{
+		id: "t2",
+		particular: "Profit Before Tax",
+		fsAmount: "",
+		otherInfoAmount: "",
+		source: "MD&A",
+		remarks: "",
+		status: "Unreviewed",
+		escalation: { ...emptyEscalation }
+	},
+	{
+		id: "t3",
+		particular: "Profit After Tax",
+		fsAmount: "",
+		otherInfoAmount: "",
+		source: "MD&A / Director's Report",
+		remarks: "",
+		status: "Unreviewed",
+		escalation: { ...emptyEscalation }
+	},
+	{
+		id: "t4",
+		particular: "Total Equity",
+		fsAmount: "",
+		otherInfoAmount: "",
+		source: "Corporate Governance Report",
+		remarks: "",
+		status: "Unreviewed",
+		escalation: { ...emptyEscalation }
+	},
+	{
+		id: "t5",
+		particular: "Borrowings",
+		fsAmount: "",
+		otherInfoAmount: "",
+		source: "MD&A",
+		remarks: "",
+		status: "Unreviewed",
+		escalation: { ...emptyEscalation }
+	}
+];
+var defaultState = {
+	meta: {
+		client: "",
+		period: "FY 2025-26",
+		partner: "",
+		reportDate: ""
+	},
+	tieOut: defaultTieOut,
+	checklist: defaultChecklist,
+	ratios: defaultRatios,
+	attachments: []
+};
+function loadState() {
+	if (typeof window === "undefined") return defaultState;
+	try {
+		const raw = window.localStorage.getItem(STORAGE_KEY);
+		if (!raw) return defaultState;
+		const parsed = JSON.parse(raw);
+		const tieOut = (parsed.tieOut ?? defaultTieOut).map((r) => ({
+			...r,
+			status: r.status ?? "Unreviewed",
+			escalation: {
+				...emptyEscalation,
+				...r.escalation ?? {}
+			}
+		}));
+		const ratios = (parsed.ratios ?? defaultRatios).map((r) => ({
+			...r,
+			auditorEvaluation: r.auditorEvaluation ?? ""
+		}));
+		return {
+			meta: {
+				...defaultState.meta,
+				...parsed.meta ?? {}
+			},
+			tieOut,
+			checklist: (parsed.checklist ?? defaultChecklist).map((c) => ({
+				...c,
+				escalation: {
+					...emptyEscalation,
+					...c.escalation ?? {}
+				}
+			})),
+			ratios,
+			attachments: parsed.attachments ?? []
+		};
+	} catch {
+		return defaultState;
+	}
+}
+function uid() {
+	return Math.random().toString(36).slice(2, 10);
+}
+function App() {
+	const [tab, setTab] = (0, import_react.useState)("tieout");
+	const [state, setState] = (0, import_react.useState)(defaultState);
+	const [hydrated, setHydrated] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
+		setState(loadState());
+		setHydrated(true);
+	}, []);
+	(0, import_react.useEffect)(() => {
+		if (!hydrated) return;
+		window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+	}, [state, hydrated]);
+	const stats = (0, import_react.useMemo)(() => {
+		return {
+			total: state.checklist.length,
+			complied: state.checklist.filter((c) => c.status === "Complied").length,
+			pending: state.checklist.filter((c) => c.status === "Pending").length,
+			inconsistent: state.checklist.filter((c) => c.status === "Inconsistent").length,
+			tieDiffs: state.tieOut.filter((r) => {
+				const a = Number(r.fsAmount);
+				const b = Number(r.otherInfoAmount);
+				return r.fsAmount !== "" && r.otherInfoAmount !== "" && Math.abs(a - b) > .005;
+			}).length,
+			flaggedRatios: state.ratios.filter((r) => {
+				const c = Number(r.current);
+				const p = Number(r.previous);
+				if (r.current === "" || r.previous === "" || p === 0) return false;
+				return Math.abs((c - p) / p) >= .25;
+			}).length
+		};
+	}, [state]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "min-h-screen bg-slate-50 text-slate-900",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Header, {
+			meta: state.meta,
+			setMeta: (m) => setState({
+				...state,
+				meta: m
+			}),
+			onReset: () => {
+				if (confirm("Reset all data to template defaults?")) setState(defaultState);
+			},
+			onSave: () => {
+				try {
+					window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+					alert("Workpaper saved to this browser.");
+				} catch {
+					alert("Save failed — browser storage may be full or disabled.");
+				}
+			}
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "mx-auto max-w-7xl px-6 py-6",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(StatsBar, { stats }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mt-6 border-b border-slate-200",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
+						className: "flex gap-1",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabBtn, {
+								active: tab === "tieout",
+								onClick: () => setTab("tieout"),
+								children: "1. Financial Tie-Out Ledger"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabBtn, {
+								active: tab === "checklist",
+								onClick: () => setTab("checklist"),
+								children: "2. Statutory Checklist"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabBtn, {
+								active: tab === "report",
+								onClick: () => setTab("report"),
+								children: "3. Workpaper & Report"
+							})
+						]
+					})
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mt-6",
+					children: [
+						tab === "tieout" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TieOutTab, {
+							state,
+							setState
+						}),
+						tab === "checklist" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChecklistTab, {
+							state,
+							setState
+						}),
+						tab === "report" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ReportTab, {
+							state,
+							setState,
+							stats
+						})
+					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("footer", {
+					className: "mt-12 border-t border-slate-200 pt-4 text-xs text-slate-500",
+					children: "SA 720 (Revised) — The Auditor's Responsibilities Relating to Other Information. Data persists locally in your browser."
+				})
+			]
+		})]
+	});
+}
+function Header({ meta, setMeta, onReset, onSave }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("header", {
+		className: "border-b border-slate-200 bg-white",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "mx-auto max-w-7xl px-6 py-4",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex items-start justify-between gap-6",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "text-[11px] font-semibold uppercase tracking-widest text-indigo-600",
+						children: "SA 720 (Revised)"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+						className: "mt-1 text-xl font-semibold text-slate-900",
+						children: "SA 720 Checklist"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-1 text-sm text-slate-500",
+						children: "Purpose: To check whether there are any inconsistencies in Other Information as compared to Financials & Audit report in compliance with SA 720"
+					})
+				] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex shrink-0 items-center gap-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: onSave,
+						className: "rounded-md bg-indigo-600 px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-indigo-700",
+						children: "💾 Save"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: onReset,
+						className: "rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50",
+						children: "Reset template"
+					})]
+				})]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mt-4 grid grid-cols-1 gap-3 md:grid-cols-4",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LabeledInput, {
+						label: "Client / Entity",
+						value: meta.client,
+						onChange: (v) => setMeta({
+							...meta,
+							client: v
+						}),
+						placeholder: "ABC Limited"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LabeledInput, {
+						label: "Period",
+						value: meta.period,
+						onChange: (v) => setMeta({
+							...meta,
+							period: v
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LabeledInput, {
+						label: "Engagement Partner",
+						value: meta.partner,
+						onChange: (v) => setMeta({
+							...meta,
+							partner: v
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LabeledInput, {
+						label: "Report Date",
+						type: "date",
+						value: meta.reportDate,
+						onChange: (v) => setMeta({
+							...meta,
+							reportDate: v
+						})
+					})
+				]
+			})]
+		})
+	});
+}
+function LabeledInput({ label, value, onChange, type = "text", placeholder }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
+		className: "block",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+			className: "block text-[11px] font-medium uppercase tracking-wide text-slate-500",
+			children: label
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+			type,
+			value,
+			placeholder,
+			onChange: (e) => onChange(e.target.value),
+			className: "mt-1 w-full rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-sm text-slate-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+		})]
+	});
+}
+function StatsBar({ stats }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "grid grid-cols-2 gap-3 md:grid-cols-5",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(StatCard, {
+				label: "Checklist Items",
+				value: stats.total,
+				tone: "slate"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(StatCard, {
+				label: "Complied",
+				value: stats.complied,
+				tone: "emerald"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(StatCard, {
+				label: "Pending",
+				value: stats.pending,
+				tone: "amber"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(StatCard, {
+				label: "Tie-Out Differences",
+				value: stats.tieDiffs,
+				tone: "rose"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(StatCard, {
+				label: "Ratios Flagged (≥25%)",
+				value: stats.flaggedRatios,
+				tone: "rose"
+			})
+		]
+	});
+}
+function StatCard({ label, value, tone }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "rounded-lg border border-slate-200 bg-white px-4 py-3",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: "text-[11px] font-medium uppercase tracking-wide text-slate-500",
+			children: label
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: `mt-1 text-2xl font-semibold ${{
+				slate: "text-slate-900",
+				emerald: "text-emerald-600",
+				amber: "text-amber-600",
+				rose: "text-rose-600"
+			}[tone]}`,
+			children: value
+		})]
+	});
+}
+function TabBtn({ active, onClick, children }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+		onClick,
+		className: `-mb-px border-b-2 px-4 py-2.5 text-sm font-medium transition-colors ${active ? "border-indigo-600 text-indigo-700" : "border-transparent text-slate-500 hover:text-slate-800"}`,
+		children
+	});
+}
+function Card({ title, description, action, children }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+		className: "rounded-lg border border-slate-200 bg-white",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "flex items-start justify-between gap-4 border-b border-slate-200 px-5 py-3.5",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+				className: "text-sm font-semibold text-slate-900",
+				children: title
+			}), description && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+				className: "mt-0.5 text-xs text-slate-500",
+				children: description
+			})] }), action]
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children })]
+	});
+}
+var TIE_STATUSES = [
+	"Unreviewed",
+	"Matched",
+	"Inconsistent",
+	"Not Applicable"
+];
+var RESOLUTIONS = [
+	"",
+	"Corrected by Management",
+	"Uncorrected - Material Misstatement Remains"
+];
+function statusBadgeClass(s) {
+	switch (s) {
+		case "Matched": return "bg-emerald-50 text-emerald-700 border-emerald-200";
+		case "Inconsistent": return "bg-rose-50 text-rose-700 border-rose-200";
+		case "Not Applicable": return "bg-slate-100 text-slate-600 border-slate-200";
+		default: return "bg-amber-50 text-amber-700 border-amber-200";
+	}
+}
+function TieOutTab({ state, setState }) {
+	const update = (id, patch) => {
+		setState({
+			...state,
+			tieOut: state.tieOut.map((r) => r.id === id ? {
+				...r,
+				...patch
+			} : r)
+		});
+	};
+	const updateEsc = (id, patch) => {
+		setState({
+			...state,
+			tieOut: state.tieOut.map((r) => r.id === id ? {
+				...r,
+				escalation: {
+					...r.escalation,
+					...patch
+				}
+			} : r)
+		});
+	};
+	const add = () => setState({
+		...state,
+		tieOut: [...state.tieOut, {
+			id: uid(),
+			particular: "",
+			fsAmount: "",
+			otherInfoAmount: "",
+			source: "",
+			remarks: "",
+			status: "Unreviewed",
+			escalation: { ...emptyEscalation }
+		}]
+	});
+	const remove = (id) => setState({
+		...state,
+		tieOut: state.tieOut.filter((r) => r.id !== id)
+	});
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "space-y-6",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Card, {
+			title: "Financial Tie-Out Ledger",
+			description: "Reconcile amounts in 'Other Information' (Director's Report, MD&A, etc.) with the audited Financial Statements. Mark each row's status — Inconsistent items trigger an SA 720 escalation card.",
+			action: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+				onClick: add,
+				className: "rounded-md bg-indigo-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-indigo-700",
+				children: "+ Add Row"
+			}),
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "overflow-x-auto",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("table", {
+					className: "w-full text-sm",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("thead", {
+						className: "bg-slate-50 text-left text-[11px] font-semibold uppercase tracking-wide text-slate-500",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tr", { children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-3 py-2.5",
+								children: "#"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-3 py-2.5 min-w-[180px]",
+								children: "Financial Metric"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-3 py-2.5 text-right",
+								children: "FS Value"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-3 py-2.5 text-right",
+								children: "OI Value"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-3 py-2.5 text-right",
+								children: "Variance"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-3 py-2.5",
+								children: "Source"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-3 py-2.5",
+								children: "Status"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", { className: "px-3 py-2.5" })
+						] })
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tbody", {
+						className: "divide-y divide-slate-100",
+						children: [state.tieOut.map((r, i) => {
+							const a = Number(r.fsAmount);
+							const bNum = Number(r.otherInfoAmount);
+							const oiIsNumeric = r.otherInfoAmount !== "" && !isNaN(bNum) && typeof r.otherInfoAmount !== "string" || typeof r.otherInfoAmount === "string" && r.otherInfoAmount.trim() !== "" && !isNaN(Number(r.otherInfoAmount));
+							const hasBoth = r.fsAmount !== "" && oiIsNumeric;
+							const diff = hasBoth ? a - bNum : null;
+							const pct = hasBoth && a !== 0 ? (bNum - a) / a * 100 : null;
+							const mismatch = diff !== null && Math.abs(diff) > .005;
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_react.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tr", {
+								className: r.status === "Inconsistent" ? "bg-rose-50/60" : r.status === "Matched" ? "" : mismatch ? "bg-amber-50/40" : "",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-3 py-2 text-xs text-slate-400",
+										children: i + 1
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-3 py-2",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellInput, {
+											value: r.particular,
+											onChange: (v) => update(r.id, { particular: v })
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-3 py-2",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellNumber, {
+											value: r.fsAmount,
+											onChange: (v) => update(r.id, { fsAmount: v })
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-3 py-2",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellInput, {
+											value: String(r.otherInfoAmount ?? ""),
+											onChange: (v) => update(r.id, { otherInfoAmount: v })
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: `px-3 py-2 text-right tabular-nums ${mismatch ? "font-semibold text-rose-600" : "text-slate-500"}`,
+										children: diff === null ? "—" : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [diff.toLocaleString(void 0, { maximumFractionDigits: 2 }), pct !== null && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+											className: "ml-1 text-[10px] font-normal text-slate-400",
+											children: [
+												"(",
+												pct.toFixed(1),
+												"%)"
+											]
+										})] })
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-3 py-2",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellInput, {
+											value: r.source,
+											onChange: (v) => update(r.id, { source: v })
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-3 py-2",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("select", {
+											value: r.status,
+											onChange: (e) => update(r.id, { status: e.target.value }),
+											className: `rounded border px-2 py-1 text-xs font-medium ${statusBadgeClass(r.status)}`,
+											children: TIE_STATUSES.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												value: s,
+												children: s
+											}, s))
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-3 py-2 text-right",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+											onClick: () => remove(r.id),
+											className: "text-xs text-slate-400 hover:text-rose-600",
+											children: "Delete"
+										})
+									})
+								]
+							}, r.id), r.status === "Inconsistent" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tr", {
+								className: "bg-rose-50/30",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+									colSpan: 7,
+									className: "px-3 pb-4 pt-1",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(EscalationCard, {
+										title: `Inconsistency: ${r.particular || "(unnamed metric)"}`,
+										escalation: r.escalation,
+										onChange: (patch) => updateEsc(r.id, patch)
+									})
+								})]
+							}, r.id + "-esc")] }, r.id);
+						}), state.tieOut.length === 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+							colSpan: 8,
+							className: "px-4 py-8 text-center text-sm text-slate-400",
+							children: "No rows. Click \"Add Row\" to start."
+						}) })]
+					})]
+				})
+			})
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(RatioAnalyzer, {})]
+	});
+}
+function EscalationCard({ title, escalation, onChange }) {
+	const esc = escalation;
+	const step1Done = esc.managementResponse.trim().length > 0;
+	const step2Done = !esc.tcwgRequired || esc.tcwgDate.trim() !== "" && esc.tcwgRemarks.trim() !== "";
+	const step3Done = esc.resolution !== "";
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "rounded-lg border-l-4 border-rose-500 bg-white p-4 shadow-sm ring-1 ring-rose-100",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "flex items-center justify-between",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "text-[11px] font-semibold uppercase tracking-widest text-rose-600",
+				children: "SA 720 Escalation Required"
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+				className: "mt-0.5 text-sm font-semibold text-slate-900",
+				children: title
+			})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex gap-1 text-[10px] font-medium",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(StepPill, {
+						n: 1,
+						done: step1Done
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(StepPill, {
+						n: 2,
+						done: step2Done
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(StepPill, {
+						n: 3,
+						done: step3Done
+					})
+				]
+			})]
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "mt-3 space-y-3",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: `rounded-md border p-3 ${step1Done ? "border-emerald-200 bg-emerald-50/30" : "border-slate-200"}`,
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+							className: "block text-[11px] font-semibold uppercase tracking-wide text-slate-600",
+							children: "Step 1 · Management Response"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-0.5 text-[11px] text-slate-500",
+							children: "Document what management said when the inconsistency was raised."
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("textarea", {
+							value: esc.managementResponse,
+							onChange: (e) => onChange({ managementResponse: e.target.value }),
+							rows: 2,
+							className: "mt-2 w-full rounded border border-slate-200 px-2 py-1.5 text-sm outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400",
+							placeholder: "e.g. Management acknowledged the difference and attributes it to..."
+						})
+					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: `rounded-md border p-3 ${!step1Done ? "border-slate-200 opacity-50 pointer-events-none" : step2Done ? "border-emerald-200 bg-emerald-50/30" : "border-slate-200"}`,
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
+						className: "flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-slate-600",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+							type: "checkbox",
+							checked: esc.tcwgRequired,
+							onChange: (e) => onChange({ tcwgRequired: e.target.checked }),
+							className: "h-3.5 w-3.5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+						}), "Step 2 · TCWG Escalation Required?"]
+					}), esc.tcwgRequired && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "mt-3 grid grid-cols-1 gap-3 md:grid-cols-3",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
+							className: "block md:col-span-1",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "block text-[11px] font-medium uppercase tracking-wide text-slate-500",
+								children: "Escalation Date"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+								type: "date",
+								value: esc.tcwgDate,
+								onChange: (e) => onChange({ tcwgDate: e.target.value }),
+								className: "mt-1 w-full rounded border border-slate-200 px-2 py-1.5 text-sm outline-none focus:border-indigo-400"
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
+							className: "block md:col-span-2",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "block text-[11px] font-medium uppercase tracking-wide text-slate-500",
+								children: "TCWG Remarks"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("textarea", {
+								value: esc.tcwgRemarks,
+								onChange: (e) => onChange({ tcwgRemarks: e.target.value }),
+								rows: 2,
+								className: "mt-1 w-full rounded border border-slate-200 px-2 py-1.5 text-sm outline-none focus:border-indigo-400",
+								placeholder: "Communication summary to Those Charged With Governance..."
+							})]
+						})]
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: `rounded-md border p-3 ${!step2Done ? "border-slate-200 opacity-50 pointer-events-none" : step3Done ? "border-emerald-200 bg-emerald-50/30" : "border-slate-200"}`,
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+							className: "block text-[11px] font-semibold uppercase tracking-wide text-slate-600",
+							children: "Step 3 · Resolution Status"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+							value: esc.resolution,
+							onChange: (e) => onChange({ resolution: e.target.value }),
+							className: "mt-2 w-full rounded border border-slate-200 px-2 py-1.5 text-sm outline-none focus:border-indigo-400",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: "",
+								children: "— Select resolution —"
+							}), RESOLUTIONS.filter((r) => r !== "").map((r) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+								value: r,
+								children: r
+							}, r))]
+						}),
+						esc.resolution === "Uncorrected - Material Misstatement Remains" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-2 rounded bg-rose-100 px-2 py-1.5 text-[11px] font-medium text-rose-800",
+							children: "⚠ Consider modifying the auditor's report per SA 720 paragraphs 18-22."
+						})
+					]
+				})
+			]
+		})]
+	});
+}
+function StepPill({ n, done }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+		className: `grid h-5 w-5 place-content-center rounded-full ${done ? "bg-emerald-500 text-white" : "bg-slate-200 text-slate-500"}`,
+		children: done ? "✓" : n
+	});
+}
+function RatioAnalyzer() {
+	const [py, setPy] = (0, import_react.useState)("");
+	const [cy, setCy] = (0, import_react.useState)("");
+	const [name, setName] = (0, import_react.useState)("");
+	const pct = py !== "" && cy !== "" && Number(py) !== 0 ? (Number(cy) - Number(py)) / Math.abs(Number(py)) * 100 : null;
+	const flagged = pct !== null && Math.abs(pct) >= 25;
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+		title: "Ratio Analyzer",
+		description: "Quick % change calculator for SEBI LODR Schedule V ratio disclosures. Flags variances ≥ 25%.",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "grid grid-cols-1 gap-4 p-5 md:grid-cols-4",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
+					className: "block",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "block text-[11px] font-medium uppercase tracking-wide text-slate-500",
+						children: "Ratio Name (optional)"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+						value: name,
+						onChange: (e) => setName(e.target.value),
+						placeholder: "e.g. Debt-Equity Ratio",
+						className: "mt-1 w-full rounded border border-slate-200 px-2.5 py-1.5 text-sm outline-none focus:border-indigo-400"
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
+					className: "block",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "block text-[11px] font-medium uppercase tracking-wide text-slate-500",
+						children: "Prior Year Ratio"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+						type: "number",
+						value: py,
+						onChange: (e) => setPy(e.target.value === "" ? "" : Number(e.target.value)),
+						className: "mt-1 w-full rounded border border-slate-200 px-2.5 py-1.5 text-sm tabular-nums outline-none focus:border-indigo-400"
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
+					className: "block",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "block text-[11px] font-medium uppercase tracking-wide text-slate-500",
+						children: "Current Year Ratio"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+						type: "number",
+						value: cy,
+						onChange: (e) => setCy(e.target.value === "" ? "" : Number(e.target.value)),
+						className: "mt-1 w-full rounded border border-slate-200 px-2.5 py-1.5 text-sm tabular-nums outline-none focus:border-indigo-400"
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "block",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "block text-[11px] font-medium uppercase tracking-wide text-slate-500",
+						children: "% Change"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: `mt-1 rounded border px-2.5 py-1.5 text-sm font-semibold tabular-nums ${pct === null ? "border-slate-200 text-slate-400" : flagged ? "border-rose-200 bg-rose-50 text-rose-700" : "border-emerald-200 bg-emerald-50 text-emerald-700"}`,
+						children: pct === null ? "—" : `${pct.toFixed(2)}%`
+					})]
+				})
+			]
+		}), flagged && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "mx-5 mb-5 rounded-md border-l-4 border-rose-500 bg-rose-50 p-3",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "text-[11px] font-bold uppercase tracking-widest text-rose-700",
+				children: "SEBI LODR Schedule V — Violation Alert"
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+				className: "mt-1 text-sm text-rose-900",
+				children: [
+					name ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: name }), " changed by "] }) : "Ratio change of ",
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("strong", { children: [pct.toFixed(2), "%"] }),
+					" vs prior year. A detailed explanation for this variance must be present in the ",
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "MD&A report" }),
+					"."
+				]
+			})]
+		})]
+	});
+}
+function CellInput({ value, onChange }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+		value,
+		onChange: (e) => onChange(e.target.value),
+		className: "w-full rounded border border-transparent bg-transparent px-1.5 py-1 text-sm outline-none focus:border-indigo-400 focus:bg-white"
+	});
+}
+function CellNumber({ value, onChange }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+		type: "number",
+		value,
+		onChange: (e) => onChange(e.target.value === "" ? "" : Number(e.target.value)),
+		className: "w-full rounded border border-transparent bg-transparent px-1.5 py-1 text-right text-sm tabular-nums outline-none focus:border-indigo-400 focus:bg-white"
+	});
+}
+function ChecklistTab({ state, setState }) {
+	const updateItem = (id, patch) => setState({
+		...state,
+		checklist: state.checklist.map((c) => c.id === id ? {
+			...c,
+			...patch
+		} : c)
+	});
+	const updateItemEsc = (id, patch) => setState({
+		...state,
+		checklist: state.checklist.map((c) => c.id === id ? {
+			...c,
+			escalation: {
+				...emptyEscalation,
+				...c.escalation ?? {},
+				...patch
+			}
+		} : c)
+	});
+	const addItem = (module) => setState({
+		...state,
+		checklist: [...state.checklist, {
+			id: uid(),
+			module,
+			reference: "",
+			requirement: "",
+			status: "Pending",
+			workpaperRef: "",
+			remarks: "",
+			escalation: { ...emptyEscalation }
+		}]
+	});
+	const removeItem = (id) => setState({
+		...state,
+		checklist: state.checklist.filter((c) => c.id !== id)
+	});
+	const modules = Array.from(new Set(state.checklist.map((c) => c.module)));
+	const updateRatio = (id, patch) => setState({
+		...state,
+		ratios: state.ratios.map((r) => r.id === id ? {
+			...r,
+			...patch
+		} : r)
+	});
+	const addRatio = () => setState({
+		...state,
+		ratios: [...state.ratios, {
+			id: uid(),
+			ratio: "",
+			current: "",
+			previous: "",
+			explanation: "",
+			auditorEvaluation: ""
+		}]
+	});
+	const removeRatio = (id) => setState({
+		...state,
+		ratios: state.ratios.filter((r) => r.id !== id)
+	});
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "space-y-6",
+		children: [modules.map((mod) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Card, {
+			title: mod,
+			action: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+				onClick: () => addItem(mod),
+				className: "rounded-md border border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50",
+				children: "+ Add Item"
+			}),
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "overflow-x-auto",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("table", {
+					className: "w-full text-sm",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("thead", {
+						className: "bg-slate-50 text-left text-[11px] font-semibold uppercase tracking-wide text-slate-500",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tr", { children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-4 py-2.5 w-32",
+								children: "Reference"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-4 py-2.5",
+								children: "Requirement"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-4 py-2.5 w-40",
+								children: "Status"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-4 py-2.5 w-32",
+								children: "W/P Ref"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-4 py-2.5",
+								children: "Remarks"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", { className: "px-4 py-2.5 w-12" })
+						] })
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tbody", {
+						className: "divide-y divide-slate-100",
+						children: state.checklist.filter((c) => c.module === mod).map((c) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_react.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tr", {
+							className: c.status === "Inconsistent" ? "bg-rose-50/60" : "",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+									className: "px-4 py-2 align-top",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellInput, {
+										value: c.reference,
+										onChange: (v) => updateItem(c.id, { reference: v })
+									})
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+									className: "px-4 py-2 align-top",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellInput, {
+										value: c.requirement,
+										onChange: (v) => updateItem(c.id, { requirement: v })
+									})
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+									className: "px-4 py-2 align-top",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+										value: c.status,
+										onChange: (e) => updateItem(c.id, { status: e.target.value }),
+										className: `w-full rounded border px-2 py-1 text-xs font-medium outline-none ${statusClass(c.status)}`,
+										children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "Pending" }),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "Complied" }),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "Not Applicable" }),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "Inconsistent" })
+										]
+									})
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+									className: "px-4 py-2 align-top",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellInput, {
+										value: c.workpaperRef,
+										onChange: (v) => updateItem(c.id, { workpaperRef: v })
+									})
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+									className: "px-4 py-2 align-top",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellInput, {
+										value: c.remarks,
+										onChange: (v) => updateItem(c.id, { remarks: v })
+									})
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+									className: "px-4 py-2 align-top text-right",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+										onClick: () => removeItem(c.id),
+										className: "text-xs text-slate-400 hover:text-rose-600",
+										children: "×"
+									})
+								})
+							]
+						}), c.status === "Inconsistent" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", {
+							className: "bg-rose-50/30",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+								colSpan: 6,
+								className: "px-4 pb-4 pt-1",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(EscalationCard, {
+									title: `Inconsistency: ${c.reference || c.module} — ${c.requirement || "(no requirement text)"}`,
+									escalation: c.escalation ?? emptyEscalation,
+									onChange: (patch) => updateItemEsc(c.id, patch)
+								})
+							})
+						})] }, c.id))
+					})]
+				})
+			})
+		}, mod)), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Card, {
+			title: "SEBI LODR — Ratio Disclosure (Schedule III)",
+			description: "Flag any key financial ratio with ≥25% change vs previous year — management explanation required.",
+			action: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+				onClick: addRatio,
+				className: "rounded-md border border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50",
+				children: "+ Add Ratio"
+			}),
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "overflow-x-auto",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("table", {
+					className: "w-full text-sm",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("thead", {
+						className: "bg-slate-50 text-left text-[11px] font-semibold uppercase tracking-wide text-slate-500",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tr", { children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-4 py-2.5 min-w-[220px]",
+								children: "Ratio"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-4 py-2.5 text-right",
+								children: "Current Year"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-4 py-2.5 text-right",
+								children: "Previous Year"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-4 py-2.5 text-right",
+								children: "% Change"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-4 py-2.5 w-32",
+								children: "Flag"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-4 py-2.5",
+								children: "Management Explanation"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+								className: "px-4 py-2.5",
+								children: "Auditor's Evaluation"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", { className: "px-4 py-2.5 w-12" })
+						] })
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tbody", {
+						className: "divide-y divide-slate-100",
+						children: state.ratios.map((r) => {
+							const c = Number(r.current);
+							const p = Number(r.previous);
+							const pct = r.current !== "" && r.previous !== "" && p !== 0 ? (c - p) / p * 100 : null;
+							const flagged = pct !== null && Math.abs(pct) >= 25;
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tr", {
+								className: flagged ? "bg-amber-50/60" : "",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-4 py-2",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellInput, {
+											value: r.ratio,
+											onChange: (v) => updateRatio(r.id, { ratio: v })
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-4 py-2",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellNumber, {
+											value: r.current,
+											onChange: (v) => updateRatio(r.id, { current: v })
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-4 py-2",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellNumber, {
+											value: r.previous,
+											onChange: (v) => updateRatio(r.id, { previous: v })
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: `px-4 py-2 text-right tabular-nums ${flagged ? "font-semibold text-amber-700" : "text-slate-500"}`,
+										children: pct === null ? "—" : `${pct.toFixed(2)}%`
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-4 py-2",
+										children: pct === null ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "text-xs text-slate-400",
+											children: "—"
+										}) : flagged ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "rounded bg-amber-100 px-2 py-0.5 text-[11px] font-semibold text-amber-800",
+											children: "EXPLAIN"
+										}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "rounded bg-emerald-100 px-2 py-0.5 text-[11px] font-semibold text-emerald-800",
+											children: "OK"
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-4 py-2",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellInput, {
+											value: r.explanation,
+											onChange: (v) => updateRatio(r.id, { explanation: v })
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-4 py-2",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CellInput, {
+											value: r.auditorEvaluation,
+											onChange: (v) => updateRatio(r.id, { auditorEvaluation: v })
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-4 py-2 text-right",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+											onClick: () => removeRatio(r.id),
+											className: "text-xs text-slate-400 hover:text-rose-600",
+											children: "×"
+										})
+									})
+								]
+							}, r.id);
+						})
+					})]
+				})
+			})
+		})]
+	});
+}
+function statusClass(s) {
+	switch (s) {
+		case "Complied": return "border-emerald-200 bg-emerald-50 text-emerald-800";
+		case "Pending": return "border-amber-200 bg-amber-50 text-amber-800";
+		case "Inconsistent": return "border-rose-200 bg-rose-50 text-rose-800";
+		case "Not Applicable": return "border-slate-200 bg-slate-50 text-slate-600";
+	}
+}
+function ReportTab({ state, setState, stats }) {
+	const exportJson = () => {
+		triggerDownload(new Blob([JSON.stringify(state, null, 2)], { type: "application/json" }), `sa720-${slug(state.meta.client)}-${Date.now()}.json`);
+	};
+	const importJson = (file) => {
+		const reader = new FileReader();
+		reader.onload = () => {
+			try {
+				const data = JSON.parse(String(reader.result));
+				window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+				window.location.reload();
+			} catch {
+				alert("Invalid file");
+			}
+		};
+		reader.readAsText(file);
+	};
+	const MAX_ATTACHMENT_BYTES = 5 * 1024 * 1024;
+	const addAttachments = (files) => {
+		if (!files) return;
+		const list = Array.from(files);
+		const tooBig = list.find((f) => f.size > MAX_ATTACHMENT_BYTES);
+		if (tooBig) {
+			alert(`"${tooBig.name}" exceeds 5 MB. Please upload a smaller file.`);
+			return;
+		}
+		Promise.all(list.map((f) => new Promise((resolve, reject) => {
+			const reader = new FileReader();
+			reader.onload = () => resolve({
+				id: uid(),
+				name: f.name,
+				size: f.size,
+				type: f.type || "application/octet-stream",
+				dataUrl: String(reader.result),
+				uploadedAt: (/* @__PURE__ */ new Date()).toISOString()
+			});
+			reader.onerror = () => reject(reader.error);
+			reader.readAsDataURL(f);
+		}))).then((attached) => {
+			setState({
+				...state,
+				attachments: [...state.attachments, ...attached]
+			});
+		}).catch(() => alert("Failed to read one or more files."));
+	};
+	const removeAttachment = (id) => setState({
+		...state,
+		attachments: state.attachments.filter((a) => a.id !== id)
+	});
+	const formatBytes = (b) => b < 1024 ? `${b} B` : b < 1024 * 1024 ? `${(b / 1024).toFixed(1)} KB` : `${(b / 1024 / 1024).toFixed(2)} MB`;
+	const uncorrectedTie = state.tieOut.filter((r) => r.status === "Inconsistent" && r.escalation.resolution === "Uncorrected - Material Misstatement Remains");
+	const uncorrectedChecklist = state.checklist.filter((c) => c.status === "Inconsistent");
+	const matchedTie = state.tieOut.filter((r) => r.status === "Matched").length;
+	const totalItemsChecked = state.tieOut.length + state.checklist.length;
+	const totalMatched = matchedTie + state.checklist.filter((c) => c.status === "Complied").length;
+	const totalUncorrected = uncorrectedTie.length + uncorrectedChecklist.length;
+	const reviewDate = (/* @__PURE__ */ new Date()).toLocaleDateString(void 0, {
+		year: "numeric",
+		month: "long",
+		day: "numeric"
+	});
+	const uncorrectedItemNames = [...uncorrectedTie.map((r) => r.particular || "(unnamed metric)"), ...uncorrectedChecklist.map((c) => `${c.module} — ${c.requirement || c.reference}`)];
+	const printMemo = () => {
+		document.body.setAttribute("data-print-target", "memo");
+		window.print();
+		setTimeout(() => document.body.removeAttribute("data-print-target"), 500);
+	};
+	const printReportText = () => {
+		document.body.setAttribute("data-print-target", "report-text");
+		window.print();
+		setTimeout(() => document.body.removeAttribute("data-print-target"), 500);
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "space-y-6",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("style", { children: `
+        @media print {
+          body * { visibility: hidden !important; }
+          body[data-print-target="memo"] #wp-memo,
+          body[data-print-target="memo"] #wp-memo * { visibility: visible !important; }
+          body[data-print-target="report-text"] #wp-report-text,
+          body[data-print-target="report-text"] #wp-report-text * { visibility: visible !important; }
+          #wp-memo, #wp-report-text {
+            position: absolute !important; left: 0; top: 0; width: 100%;
+            padding: 0 !important; border: 0 !important; box-shadow: none !important;
+          }
+          @page { margin: 18mm; }
+        }
+      ` }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Card, {
+				title: "Workpaper Actions",
+				description: "Save, restore, or print the engagement workpaper.",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex flex-wrap gap-2 p-5",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							onClick: printMemo,
+							className: "rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700",
+							children: "Print Workpaper"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							onClick: printReportText,
+							className: "rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800",
+							children: "Print Auditor's Report Text"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							onClick: exportJson,
+							className: "rounded-md border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50",
+							children: "Export JSON"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
+							className: "cursor-pointer rounded-md border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50",
+							children: ["Import JSON", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+								type: "file",
+								accept: "application/json",
+								className: "hidden",
+								onChange: (e) => e.target.files && importJson(e.target.files[0])
+							})]
+						})
+					]
+				})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Card, {
+				title: "Other Information — Document Attachments",
+				description: "Upload source documents the audit team is tying to (Director's Report, MD&A, BRSR, Corporate Governance Report, draft annual report, etc.). Files are stored locally in this browser alongside your workpaper.",
+				action: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
+					className: "cursor-pointer rounded-md bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-indigo-700",
+					children: ["+ Upload Document(s)", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+						type: "file",
+						multiple: true,
+						className: "hidden",
+						accept: ".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg,.txt,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,image/*,text/plain",
+						onChange: (e) => {
+							addAttachments(e.target.files);
+							e.target.value = "";
+						}
+					})]
+				}),
+				children: state.attachments.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "px-5 py-8 text-center text-sm text-slate-400",
+					children: "No documents uploaded yet. Max 5\xA0MB per file."
+				}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+					className: "divide-y divide-slate-100",
+					children: state.attachments.map((a) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+						className: "flex items-center justify-between gap-4 px-5 py-3",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "min-w-0 flex-1",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+								href: a.dataUrl,
+								download: a.name,
+								className: "block truncate text-sm font-medium text-indigo-700 hover:underline",
+								children: a.name
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "mt-0.5 text-[11px] text-slate-500",
+								children: [
+									formatBytes(a.size),
+									" · ",
+									a.type || "file",
+									" · uploaded ",
+									new Date(a.uploadedAt).toLocaleString()
+								]
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex shrink-0 gap-2",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+								href: a.dataUrl,
+								download: a.name,
+								className: "rounded border border-slate-200 px-2.5 py-1 text-xs font-medium text-slate-700 hover:bg-slate-50",
+								children: "Download"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								onClick: () => {
+									if (confirm(`Remove "${a.name}"?`)) removeAttachment(a.id);
+								},
+								className: "rounded border border-slate-200 px-2.5 py-1 text-xs font-medium text-rose-600 hover:bg-rose-50",
+								children: "Remove"
+							})]
+						})]
+					}, a.id))
+				})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				id: "wp-memo",
+				className: "rounded-lg border border-slate-200 bg-white p-8 text-sm leading-relaxed text-slate-800",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "border-b border-slate-300 pb-4",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "text-[11px] font-semibold uppercase tracking-widest text-indigo-600",
+								children: "SA 720 (Revised) — Audit Workpaper Memo"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+								className: "mt-1 text-2xl font-bold text-slate-900",
+								children: "Other Information — Compliance Memorandum"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-1 text-xs text-slate-500",
+								children: "The Auditor's Responsibilities Relating to Other Information"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("dl", {
+								className: "mt-5 grid grid-cols-2 gap-x-8 gap-y-2 text-sm",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Meta, {
+										k: "Client Name",
+										v: state.meta.client || "—"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Meta, {
+										k: "Financial Year",
+										v: state.meta.period || "—"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Meta, {
+										k: "Date of Review",
+										v: reviewDate
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Meta, {
+										k: "Performed By",
+										v: state.meta.partner || "—"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Meta, {
+										k: "Report Date",
+										v: state.meta.reportDate || "—"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Meta, {
+										k: "Workpaper Ref",
+										v: `WP-SA720-${slug(state.meta.client).toUpperCase().slice(0, 12) || "ENG"}`
+									})
+								]
+							})
+						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Section, {
+						title: "1. Executive Summary",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("table", {
+							className: "w-full border border-slate-200 text-sm",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tbody", { children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, {
+									k: "Total items checked (tie-outs + checklist)",
+									v: totalItemsChecked
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, {
+									k: "Total matched / complied",
+									v: totalMatched
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, {
+									k: "Tie-out differences identified",
+									v: stats.tieDiffs
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, {
+									k: "Open / pending checklist items",
+									v: stats.pending
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, {
+									k: "Ratios flagged (≥25% variance)",
+									v: stats.flaggedRatios
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Row, {
+									k: "Uncorrected material inconsistencies",
+									v: totalUncorrected
+								})
+							] })
+						}), totalUncorrected > 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "mt-3 rounded-md border-l-4 border-rose-500 bg-rose-50 p-3 text-xs text-rose-900",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Reporting impact:" }),
+								" ",
+								totalUncorrected,
+								" uncorrected material inconsistenc",
+								totalUncorrected === 1 ? "y" : "ies",
+								" require modification of the auditor's report — see Section 6."
+							]
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Section, {
+						title: "2. Financial Tie-Out Procedures",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ReportTable, {
+							headers: [
+								"Metric",
+								"FS Value",
+								"OI Value",
+								"Variance",
+								"Source",
+								"Status",
+								"Resolution"
+							],
+							rows: state.tieOut.map((r) => {
+								const diff = r.fsAmount !== "" && r.otherInfoAmount !== "" && !isNaN(Number(r.otherInfoAmount)) ? Number(r.fsAmount) - Number(r.otherInfoAmount) : null;
+								return [
+									r.particular,
+									fmt(r.fsAmount),
+									String(r.otherInfoAmount ?? ""),
+									diff === null ? "—" : diff.toLocaleString(),
+									r.source,
+									r.status,
+									r.status === "Inconsistent" ? r.escalation.resolution || "Pending" : "—"
+								];
+							})
+						})
+					}),
+					uncorrectedTie.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Section, {
+						title: "2a. Inconsistency Escalation Log (per SA 720 ¶ 16-17)",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "space-y-3",
+							children: state.tieOut.filter((r) => r.status === "Inconsistent").map((r) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "rounded border border-slate-200 p-3 text-xs",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "font-semibold text-slate-900",
+									children: [
+										r.particular || "(unnamed metric)",
+										" — ",
+										r.escalation.resolution || "Resolution pending"
+									]
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "mt-2 grid grid-cols-1 gap-1.5 md:grid-cols-2",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-slate-500",
+												children: "Management response:"
+											}),
+											" ",
+											r.escalation.managementResponse || "—"
+										] }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-slate-500",
+												children: "TCWG escalated:"
+											}),
+											" ",
+											r.escalation.tcwgRequired ? `Yes (${r.escalation.tcwgDate || "date n/a"})` : "No"
+										] }),
+										r.escalation.tcwgRequired && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "md:col-span-2",
+											children: [
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: "text-slate-500",
+													children: "TCWG remarks:"
+												}),
+												" ",
+												r.escalation.tcwgRemarks || "—"
+											]
+										})
+									]
+								})]
+							}, r.id))
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Section, {
+						title: "3. Statutory Checklist (Companies Act & SEBI LODR)",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ReportTable, {
+							headers: [
+								"Module",
+								"Ref",
+								"Requirement",
+								"Status",
+								"W/P",
+								"Remarks"
+							],
+							rows: state.checklist.map((c) => [
+								c.module,
+								c.reference,
+								c.requirement,
+								c.status,
+								c.workpaperRef,
+								c.remarks
+							])
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Section, {
+						title: "4. Key Financial Ratios (SEBI LODR Schedule V — ≥25% variance flag)",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ReportTable, {
+							headers: [
+								"Ratio",
+								"CY",
+								"PY",
+								"% Change",
+								"Status",
+								"Management Explanation",
+								"Auditor's Evaluation"
+							],
+							rows: state.ratios.map((r) => {
+								const c = Number(r.current);
+								const p = Number(r.previous);
+								const pct = r.current !== "" && r.previous !== "" && p !== 0 ? (c - p) / p * 100 : null;
+								const status = pct === null ? "—" : Math.abs(pct) >= 25 ? "Explain" : "OK";
+								return [
+									r.ratio,
+									fmt(r.current),
+									fmt(r.previous),
+									pct === null ? "—" : `${pct.toFixed(2)}%`,
+									status,
+									r.explanation,
+									r.auditorEvaluation
+								];
+							})
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Section, {
+						title: "5. Auditor's Conclusion",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Based on the procedures performed in accordance with SA 720 (Revised), we have read the Other Information and considered whether a material inconsistency exists between the Other Information and the audited financial statements, or the knowledge obtained during the audit." }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-3",
+							children: totalUncorrected === 0 && stats.tieDiffs === 0 ? "No material inconsistencies were identified. No reporting under SA 720 is required." : `${totalUncorrected} uncorrected and ${stats.tieDiffs} unresolved tie-out matter(s) identified — refer to the escalation log in Section 2a and the auditor's report text in Section 6.`
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Section, {
+						title: "6. Sign-Off",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "mt-6 grid grid-cols-2 gap-12 pt-4",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sign, { label: `Prepared by — ${state.meta.partner || "Engagement Team"}` }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sign, { label: "Reviewed by — Engagement Partner" })]
+						})
+					})
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				id: "wp-report-text",
+				className: "rounded-lg border border-slate-200 bg-white p-8 text-sm leading-relaxed text-slate-800",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "border-b border-slate-300 pb-4",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "text-[11px] font-semibold uppercase tracking-widest text-indigo-600",
+							children: "Independent Auditor's Report — Extract"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+							className: "mt-1 text-2xl font-bold text-slate-900",
+							children: "Other Information Section (SA 720 Revised)"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "mt-2 inline-flex items-center gap-2 rounded-full border px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wide",
+							style: {},
+							children: totalUncorrected === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "rounded-full border border-emerald-300 bg-emerald-50 px-2 py-0.5 text-emerald-800",
+								children: "Scenario A — Clean Report"
+							}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "rounded-full border border-rose-300 bg-rose-50 px-2 py-0.5 text-rose-800",
+								children: "Scenario B — Material Misstatement in Other Information"
+							})
+						})
+					]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "prose prose-sm mt-5 max-w-none text-slate-800",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+							className: "text-base font-semibold text-slate-900",
+							children: "Information Other than the Financial Statements and Auditor's Report Thereon"
+						}),
+						totalUncorrected === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
+								"The Company's Board of Directors is responsible for the other information. The other information comprises the information included in the ",
+								listOI(state),
+								", but does not include the financial statements and our auditor's report thereon."
+							] }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Our opinion on the financial statements does not cover the other information and we do not express any form of assurance conclusion thereon." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "In connection with our audit of the financial statements, our responsibility is to read the other information and, in doing so, consider whether the other information is materially inconsistent with the financial statements or our knowledge obtained in the audit, or otherwise appears to be materially misstated." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: ["If, based on the work we have performed, we conclude that there is a material misstatement of this other information, we are required to report that fact. ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "We have nothing to report in this regard." })] })
+						] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
+								"The Company's Board of Directors is responsible for the other information. The other information comprises the information included in the ",
+								listOI(state),
+								", but does not include the financial statements and our auditor's report thereon."
+							] }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Our opinion on the financial statements does not cover the other information and we do not express any form of assurance conclusion thereon." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "In connection with our audit of the financial statements, our responsibility is to read the other information and, in doing so, consider whether the other information is materially inconsistent with the financial statements or our knowledge obtained in the audit, or otherwise appears to be materially misstated." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "We have identified a material misstatement in the following item(s) of other information:" }) }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+								className: "ml-5 list-disc",
+								children: uncorrectedItemNames.map((n, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: n }, i))
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: ["The above matter(s) were communicated to those charged with governance. Management has refused to correct the misstatement(s). Accordingly, we report that the other information referred to above contains a material misstatement. ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Our opinion on the financial statements is not modified in respect of this matter." })] }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-xs italic text-slate-500",
+								children: "Drafting note: where the misstatement also affects the financial statements or our audit knowledge, consider whether modification of the opinion under SA 705 is additionally required."
+							})
+						] }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "mt-8 border-t border-slate-300 pt-6",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "grid grid-cols-2 gap-12",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "text-xs text-slate-500",
+										children: "For and on behalf of"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "mt-1 text-sm font-semibold text-slate-900",
+										children: "[Firm Name], Chartered Accountants"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "text-xs text-slate-500",
+										children: "Firm Registration No.: ___"
+									})
+								] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "text-right",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "text-sm font-semibold text-slate-900",
+											children: state.meta.partner || "[Partner Name]"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "text-xs text-slate-500",
+											children: "Partner · Membership No.: ___"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "mt-2 text-xs text-slate-500",
+											children: ["Date: ", state.meta.reportDate || "[Report Date]"]
+										})
+									]
+								})]
+							})
+						})
+					]
+				})]
+			})
+		]
+	});
+}
+function listOI(state) {
+	const sources = /* @__PURE__ */ new Set();
+	state.tieOut.forEach((r) => {
+		if (r.source) sources.add(r.source);
+	});
+	state.checklist.forEach((c) => {
+		if (c.module.includes("SEBI") || c.requirement) sources.add(c.requirement);
+	});
+	const arr = Array.from(sources).slice(0, 4);
+	if (arr.length === 0) return "Director's Report, Management Discussion & Analysis, and Corporate Governance Report";
+	return arr.join(", ");
+}
+function Meta({ k, v }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
+		className: "text-xs uppercase tracking-wide text-slate-500",
+		children: k
+	}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
+		className: "text-sm font-medium text-slate-900",
+		children: v
+	})] });
+}
+function Section({ title, children }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "mt-6",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+			className: "mb-2 text-base font-semibold text-slate-900",
+			children: title
+		}), children]
+	});
+}
+function Row({ k, v }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tr", {
+		className: "border-b border-slate-100",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+			className: "px-3 py-1.5 text-slate-600",
+			children: k
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+			className: "px-3 py-1.5 text-right font-semibold tabular-nums",
+			children: v
+		})]
+	});
+}
+function ReportTable({ headers, rows }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "overflow-x-auto",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("table", {
+			className: "w-full border border-slate-200 text-xs",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("thead", {
+				className: "bg-slate-50",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", { children: headers.map((h, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+					className: "border-b border-slate-200 px-2 py-1.5 text-left font-semibold text-slate-600",
+					children: h
+				}, i)) })
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tbody", { children: [rows.map((r, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", {
+				className: "border-b border-slate-100 align-top",
+				children: r.map((c, j) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+					className: "px-2 py-1.5 text-slate-700",
+					children: c || "—"
+				}, j))
+			}, i)), rows.length === 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+				colSpan: headers.length,
+				className: "px-2 py-4 text-center text-slate-400",
+				children: "No data"
+			}) })] })]
+		})
+	});
+}
+function Sign({ label }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "h-12 border-b border-slate-400" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "mt-1 text-xs text-slate-500",
+		children: label
+	})] });
+}
+function fmt(v) {
+	return v === "" ? "—" : Number(v).toLocaleString(void 0, { maximumFractionDigits: 2 });
+}
+function slug(s) {
+	return (s || "engagement").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+function triggerDownload(blob, name) {
+	const url = URL.createObjectURL(blob);
+	const a = document.createElement("a");
+	a.href = url;
+	a.download = name;
+	a.click();
+	URL.revokeObjectURL(url);
+}
+//#endregion
+export { App as component };
