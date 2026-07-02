@@ -15,13 +15,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  // Support both Groq (FREE) and OpenRouter (paid)
+  const GROQ_API_KEY = process.env.GROQ_API_KEY;
   const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 
-  if (!OPENROUTER_API_KEY) {
+  if (!GROQ_API_KEY && !OPENROUTER_API_KEY) {
     return res.status(500).json({
-      error: 'OpenRouter API key not configured. Please add OPENROUTER_API_KEY to Vercel environment variables.'
+      error: 'No API key configured. Add GROQ_API_KEY (free) or OPENROUTER_API_KEY to Vercel environment variables.'
     });
   }
+
+  // Prefer Groq (free) over OpenRouter (paid)
+  const useGroq = !!GROQ_API_KEY;
+  const API_KEY = useGroq ? GROQ_API_KEY : OPENROUTER_API_KEY;
 
   try {
     const { fsText, oiText } = req.body || {};
@@ -68,17 +74,31 @@ ${oiText.substring(0, 50000)}
 
 Please analyze these documents and return the JSON response.`;
 
-    // Call OpenRouter API
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    // Call API (Groq or OpenRouter)
+    const apiUrl = useGroq 
+      ? 'https://api.groq.com/openai/v1/chat/completions'
+      : 'https://openrouter.ai/api/v1/chat/completions';
+    
+    const model = useGroq 
+      ? 'llama-3.3-70b-versatile'  // FREE on Groq
+      : 'anthropic/claude-sonnet-4';  // Paid on OpenRouter
+    
+    const headers: Record<string, string> = {
+      'Authorization': `Bearer ${API_KEY}`,
+      'Content-Type': 'application/json',
+    };
+    
+    // Add OpenRouter-specific headers
+    if (!useGroq) {
+      headers['HTTP-Referer'] = 'https://github.com/CAArmaanShariff/sa-720-checklist';
+      headers['X-Title'] = 'SA 720 Checklist AI Analysis';
+    }
+
+    const response = await fetch(apiUrl, {
       method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
-        'Content-Type': 'application/json',
-        'HTTP-Referer': 'https://github.com/CAArmaanShariff/sa-720-checklist',
-        'X-Title': 'SA 720 Checklist AI Analysis'
-      },
+      headers,
       body: JSON.stringify({
-        model: 'anthropic/claude-sonnet-4',
+        model,
         messages: [
           { role: 'system', content: systemPrompt },
           { role: 'user', content: userPrompt }
@@ -90,7 +110,7 @@ Please analyze these documents and return the JSON response.`;
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('OpenRouter API error:', errorText);
+      console.error(`${useGroq ? 'Groq' : 'OpenRouter'} API error:`, errorText);
       return res.status(500).json({ error: `AI analysis failed: ${response.status}` });
     }
 
