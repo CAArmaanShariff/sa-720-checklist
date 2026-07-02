@@ -78,7 +78,7 @@ Please analyze these documents and return the JSON response.`;
         'X-Title': 'SA 720 Checklist AI Analysis'
       },
       body: JSON.stringify({
-        model: 'anthropic/claude-3.5-sonnet',
+        model: 'anthropic/claude-sonnet-4',
         messages: [
           { role: 'system', content: systemPrompt },
           { role: 'user', content: userPrompt }
